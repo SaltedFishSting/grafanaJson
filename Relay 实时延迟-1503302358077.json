@@ -1,0 +1,3516 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "4.4.1"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": false,
+  "id": null,
+  "links": [],
+  "refresh": false,
+  "rows": [
+    {
+      "collapse": false,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 1,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行总数",
+              "metric": "rt_H_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 1实时延迟样本总数",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 2,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行最大延迟",
+              "metric": "rt_S_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行最小延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行最大延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "metric": "",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"1\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行最小延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 1 实时延迟样本分布",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 3,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"2\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 2",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 4,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行最大延迟",
+              "metric": "",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行最小延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行最大延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行最小延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 2",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行总数",
+              "metric": "",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"3\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 3",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"3\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 3",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延时总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"4\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 4",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 8,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"4\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 4",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 9,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"5\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Realy 5",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 10,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"5\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 5",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 13,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"6\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 6",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 14,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"6\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 6",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 15,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"13\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 13",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 16,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"13\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 13",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 17,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 14",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 18,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"14\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 14",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 19,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"20\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 20",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 20,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"20\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 20",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 21,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<70",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<40",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"1\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<10",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 21",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 22,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"21\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上行延迟",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 21",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 23,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Down\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟总数",
+              "metric": "realtimeRelaydelay_Histogram_relay_bucket",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Down\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<100",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Down\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<70",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Down\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<40",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Down\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "下行延迟<10",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Up\",le=\"+Inf\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟总数",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Up\",le=\"100\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Up\",le=\"70\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "H",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Up\",le=\"40\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "I",
+              "step": 300
+            },
+            {
+              "expr": "rt_H_relay_bucket{RelayId=\"23\",direction=\"Up\",le=\"10\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "上行延迟<100",
+              "refId": "J",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 23",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 24,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大下行延迟",
+              "metric": "realtimeRelaydelay_Summary_relay",
+              "refId": "A",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%下行延迟",
+              "refId": "B",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%下行延迟",
+              "refId": "C",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Down\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小下行延迟",
+              "refId": "D",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"1\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最大上行延迟",
+              "refId": "E",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"0.9\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "90%上行延迟",
+              "refId": "F",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"0.5\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "50%上行延迟",
+              "refId": "G",
+              "step": 300
+            },
+            {
+              "expr": "rt_S_relay{RelayId=\"2\",direction=\"Up\",quantile=\"0\"}",
+              "format": "time_series",
+              "interval": "5m",
+              "intervalFactor": 1,
+              "legendFormat": "最小上延时",
+              "refId": "H",
+              "step": 300
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Relay 23",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Relay 实时延迟",
+  "version": 29
+}
